@@ -21,7 +21,7 @@ TRIGGER_WORD = "test321"
 def get_weather():
     """Fetches the weather from wttr.in and returns it as a formatted string."""
     # The format shows Location, Condition, Temperature, Wind, and Humidity.
-    url = f"https://wttr.in/{LOCATION}?format=%l:%c+%t,+%w,+Humidity:%h&u"
+    url = f"https://wttr.in/{LOCATION}?format=%l:%c+%t,Vientos:+%w,+Humidity:%h,Precip:%p&u"
     try:
         response = requests.get(url, timeout=10)
         response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
